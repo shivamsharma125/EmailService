@@ -14,18 +14,18 @@ import javax.mail.Session;
 import java.util.Properties;
 
 @Component
-public class KafkaConsumer {
+public class KafkaConsumerEmailClient {
     private ObjectMapper objectMapper;
     @Value("${sender.email}")
     private String senderEmail;
     @Value("${sender.password}")
     private String emailPassword;
 
-    public KafkaConsumer(ObjectMapper objectMapper){
+    public KafkaConsumerEmailClient(ObjectMapper objectMapper){
         this.objectMapper = objectMapper;
     }
 
-    @KafkaListener(topics = "SendEmail", groupId = "EmailService")
+    @KafkaListener(topics = "signup", groupId = "EmailService")
     // from all the servers which are running under group EmailService
     // only one server should be able to handle this event
     public void handleSendEmailEvent(String message) {
