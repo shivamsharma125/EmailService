@@ -17,7 +17,7 @@ This microservice handles **transactional email delivery** in an event-driven ar
 ## 🛠️ Tech Stack
 
 * Java 17
-* Spring Boot 3.x
+* Spring Boot 3
 * Apache Kafka
 * JavaMail API
 * Maven
